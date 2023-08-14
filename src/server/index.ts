@@ -5,6 +5,7 @@ import z from "zod";
 
 //* Local imports
 import { downloader } from "./donwload.js";
+import { convertToMP3 } from "./create-mp3.js";
 
 const port = 3333;
 
@@ -20,6 +21,9 @@ app.get("/audio", async (req, res) => {
 
     //download
     await downloader(videoId.data);
+
+    //convert
+    await convertToMP3(`v${videoId.data}.mp4`);
 
     return res.json({ videoId: videoId.data });
   } catch (error) {

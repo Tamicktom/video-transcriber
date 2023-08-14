@@ -16,10 +16,14 @@
   "dependencies": {
     "@types/cors": "^2.8.13",
     "@types/express": "^4.17.17",
+    "@types/ffmpeg-static": "^3.0.1",
+    "@types/fluent-ffmpeg": "^2.1.21",
     "@types/youtube": "^0.0.47",
     "axios": "^1.4.0",
     "cors": "^2.8.5",
     "express": "^4.18.2",
+    "ffmpeg-static": "^5.1.0",
+    "fluent-ffmpeg": "^2.1.2",
     "ytdl-core": "^4.11.5",
     "zod": "^3.21.4"
   }
