@@ -25,3 +25,4 @@ dist-ssr
 
 src/styles/*.map
 src/styles/*.css
+src/**/*.js
