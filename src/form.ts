@@ -1,5 +1,9 @@
+//* Libraries imports
+import axios from "axios";
+
+//* Local imports
 import { startLoading, stopLoading, loadingMessage } from "./loading";
-import { loadVideo } from "./youtube-api";
+import { loadVideo, getVideoId } from "./youtube-api";
 
 const form = document.querySelector<HTMLFormElement>("#form")!;
 
@@ -11,9 +15,12 @@ form.addEventListener("submit", async (e) => {
     startLoading();
 
     const formData = new FormData(form);
-    const url = formData.get("url")!;
+    const url = formData.get("url")!.toString();
 
-    await loadVideo(url.toString());
+    await loadVideo(url);
+
+    loadingMessage("Baixando o video...");
+    await axios.get("http://localhost:3333/audio?v=" + getVideoId(url));
   } catch (error) {
     console.error("[SUBMIT ERROR]", error);
   } finally {
