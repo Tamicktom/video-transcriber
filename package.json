@@ -19,6 +19,7 @@
     "@types/ffmpeg-static": "^3.0.1",
     "@types/fluent-ffmpeg": "^2.1.21",
     "@types/youtube": "^0.0.47",
+    "@xenova/transformers": "^2.5.2",
     "axios": "^1.4.0",
     "cors": "^2.8.5",
     "express": "^4.18.2",
