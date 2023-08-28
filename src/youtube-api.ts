@@ -12,11 +12,15 @@ export function getVideoId(url: string) {
   return videoId;
 }
 
+//@ts-ignore
+window.YTPlayer = null;
+
 export function loadVideo(url: string) {
   loadingMessage("Carregando o vídeo...");
 
   return new Promise<void>((resolve, reject) => {
-    new YT.Player("youtubeVideo", {
+    //@ts-ignore
+    window.YTPlayer = new YT.Player("youtubeVideo", {
       videoId: getVideoId(url),
       events: {
         onReady: () => resolve(),
